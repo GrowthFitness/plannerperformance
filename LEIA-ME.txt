@@ -1,0 +1,36 @@
+PLANNER PERFORMANCE - COMO COLOCAR NO AR E INSTALAR
+
+O QUE TEM NESTA PASTA
+- index.html            o aplicativo
+- manifest.webmanifest  nome, cor e ícones do app instalado
+- sw.js                 faz o app abrir rápido e funcionar sem internet
+- icons/                ícones do app
+
+1) COLOCAR NO AR PELO GITHUB PAGES, NO SEU SUBDOMÍNIO
+- Crie uma conta em github.com (se ainda não tem) e um repositório novo, por exemplo "planner".
+- No repositório, clique em "Add file" > "Upload files" e envie TUDO que está aqui: index.html, manifest.webmanifest, sw.js e a pasta icons inteira. Confirme em "Commit changes".
+- Vá em Settings > Pages. Em "Source", escolha "Deploy from a branch", branch "main" e pasta "/ (root)". Salve.
+- Ainda em Pages, no campo "Custom domain", digite o subdomínio, por exemplo planner.seudominio.com.br, e salve.
+- No painel onde o seu domínio é gerenciado (Registro.br, Hostinger, Cloudflare etc.), crie um registro DNS: tipo CNAME, nome "planner", valor "SEUUSUARIO.github.io" (o seu usuário do GitHub).
+- Espere alguns minutos até o GitHub reconhecer o DNS. Depois marque "Enforce HTTPS" em Pages. Sem HTTPS o navegador não deixa instalar o app.
+- Pronto: o app fica em https://planner.seudominio.com.br
+
+2) INSTALAR NO CELULAR OU NO COMPUTADOR
+- iPhone (use o Safari): toque em Compartilhar e depois em "Adicionar à Tela de Início".
+- Android (Chrome): menu de três pontinhos e depois "Instalar app" (ou "Adicionar à tela inicial").
+- Computador (Chrome ou Edge): clique no ícone de instalar que aparece na barra de endereço.
+
+3) SOBRE OS DADOS
+- As tarefas ficam salvas só no aparelho de cada pessoa. Não há login nem sincronização entre aparelhos.
+- No iPhone, o app instalado guarda os dados separados do Safari. Instale primeiro e só depois comece a usar.
+- Para levar os dados de um lugar para outro (por exemplo da versão de teste do Claude para o seu site): no app de origem, clique na foto de perfil, em Backup, depois em "Copiar backup". No app novo, abra a foto de perfil, cole o texto em "Restaurar backup" e clique no botão.
+- Faça o backup de vez em quando. Se a pessoa limpar os dados do navegador, as tarefas somem.
+
+4) ATUALIZAR O APP DEPOIS
+- No repositório do GitHub, envie de novo os arquivos que mudaram (Add file > Upload files), substituindo os antigos.
+- Quem já tem o app instalado vê a versão nova na segunda vez que abrir (a primeira atualiza em segundo plano).
+- Para forçar a atualização para todo mundo, troque o número no final de "planner-performance-v25" (por exemplo, para "v24") no começo do arquivo sw.js.
+
+5) ANTES DE DIVULGAR PARA CLIENTES
+- Confira se o nome "Planner Performance" está livre como marca (INPI) e como domínio.
+- Se for guardar dados dos clientes em um servidor no futuro, a LGPD passa a valer: política de privacidade e consentimento.
